@@ -63,10 +63,8 @@ function validateItems(item){
     
     if(item == date){
         let age = calcAge();
-        if(age <= 0){
-            date.setCustomValidity('Data inválida, você ainda precisa nascer!');
-        } else if(age > 130){
-            date.setCustomValidity(`Data inválida, você não deve ter ${age} anos.`);
+        if(age < 0 || age > 130){
+            date.setCustomValidity('Data inválida!');
         }
     }
 }
